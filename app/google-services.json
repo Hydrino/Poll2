@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "349658564944",
+    "firebase_url": "https://poll2-53ee1.firebaseio.com",
+    "project_id": "poll2-53ee1",
+    "storage_bucket": "poll2-53ee1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:349658564944:android:3ac89ed2ae312cd9",
+        "android_client_info": {
+          "package_name": "com.ninad.ninhydrin.poll2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "349658564944-3q4ktu125b5hs2pg75sqp9ekktil58oq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ninad.ninhydrin.poll2",
+            "certificate_hash": "3e1a8e7e12112c8e2e55b5fb7f61650bccff4b55"
+          }
+        },
+        {
+          "client_id": "349658564944-bfinir3c7v0jltet6apr2v2a2a17l52k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCniHVbYqgK_D3MJoQL589utxT0vDBxPyQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "349658564944-bfinir3c7v0jltet6apr2v2a2a17l52k.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

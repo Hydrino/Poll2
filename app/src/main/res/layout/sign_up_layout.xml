@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <EditText
+        android:id="@+id/sign_up_roll_no_edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:maxLength="9"
+        android:layout_marginBottom="16dp"
+        android:inputType="number" />
+
+    <Spinner
+        android:id="@+id/sign_up_branch_spinner"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_marginBottom="16dp"
+        android:entries="@array/branches">
+
+    </Spinner>
+
+    <Spinner
+        android:id="@+id/sign_up_year_spinner"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_marginBottom="16dp"
+        android:entries="@array/years">
+
+    </Spinner>
+
+    <Button
+        android:id="@+id/sign_up_done_button"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:text="@string/sign_up" />
+
+</LinearLayout>

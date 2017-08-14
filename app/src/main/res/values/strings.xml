@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">Poll2</string>
+    <string name="god">GOD</string>
+    <string name="is_user_signed_in">IsUserSignedIn</string>
+    <string name="sign_up">Sign up</string>
+    <string name="roll_no">RollNo</string>
+    <string name="branch">Branch</string>
+    <string name="year">Year</string>
+    <string name="thumbs_down">ThumbsDown</string>
+    <string name="thumbs_up">ThumbsUp</string>
+    <string name="open_nav">OpenNav</string>
+    <string name="close_nav">CloseNav</string>
+    <string name="done">Done</string>
+    <string name="is_my_polls">IsMyPolls</string>
+    <string name="undo">Undo</string>
+    <string name="delete">Delete</string>
+    <string-array name="branches">
+        <item>Cse</item>
+        <item>Ece</item>
+        <item>Eee</item>
+    </string-array>
+    <string-array name="years">
+        <item>1st</item>
+        <item>2nd</item>
+        <item>3rd</item>
+        <item>4th</item>
+    </string-array>
+</resources>

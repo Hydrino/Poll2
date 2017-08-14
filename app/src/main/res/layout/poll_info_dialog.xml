@@ -1,0 +1,149 @@
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/poll_info_title"
+        style="@style/Base.TextAppearance.AppCompat.Title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:maxLength="29"
+        android:text="qjcgfcgfscxxxwwxwxxwxwtghghgggggx"
+        android:textSize="20sp"
+        app:layout_constraintDimensionRatio=""
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/poll_info_delete"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/poll_info_delete"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:background="@android:color/transparent"
+        android:contentDescription="@string/delete"
+        android:src="@drawable/ic_delete_black_24dp"
+        android:tint="@android:color/darker_gray"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/poll_info_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="TextViewsw"
+        android:textSize="14sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/poll_info_title" />
+
+    <TextView
+        android:id="@+id/poll_info_desc"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:lineSpacingMultiplier="1.2"
+        android:maxLength="65"
+        android:text="TextViewswj ws wj sws ws wjs w sj ws w sw s whshw shwsh whjs hjw shjw sj wjs wjshjw s wjs jw sjw sj wsjwswsws
+wswbshwshwhswshwsbwswshbwshbhjwbshjwbswsjwsjws"
+        android:textSize="16sp"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/poll_info_date" />
+
+    <ImageButton
+        android:id="@+id/poll_info_thumbs_down"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="32dp"
+        android:background="@android:color/transparent"
+        android:contentDescription="@string/thumbs_down"
+        android:src="@drawable/ic_thumb_down_black_24dp"
+        android:tint="@android:color/darker_gray"
+        app:layout_constraintLeft_toRightOf="@+id/poll_info_thumbs_up"
+        app:layout_constraintRight_toLeftOf="@+id/poll_info_undo"
+        app:layout_constraintTop_toBottomOf="@+id/poll_info_desc" />
+
+    <ImageButton
+        android:id="@+id/poll_info_thumbs_up"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="32dp"
+        android:background="@android:color/transparent"
+        android:contentDescription="@string/thumbs_up"
+        android:src="@drawable/ic_thumb_up_black_24dp"
+        android:tint="@android:color/darker_gray"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/poll_info_thumbs_down"
+        app:layout_constraintTop_toBottomOf="@+id/poll_info_desc" />
+
+    <ImageButton
+        android:id="@+id/poll_info_undo"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="32dp"
+        android:background="@android:color/transparent"
+        android:contentDescription="@string/undo"
+        android:src="@drawable/ic_undo_black_24dp"
+        android:tint="@android:color/darker_gray"
+        app:layout_constraintLeft_toRightOf="@+id/poll_info_thumbs_down"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/poll_info_desc" />
+
+    <TextView
+        android:id="@+id/upVotes"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:gravity="center"
+        app:layout_constraintLeft_toLeftOf="@+id/poll_info_thumbs_up"
+        app:layout_constraintRight_toRightOf="@+id/poll_info_thumbs_up"
+        app:layout_constraintTop_toBottomOf="@+id/poll_info_thumbs_up" />
+
+    <TextView
+        android:id="@+id/downVotes"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:gravity="center"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="@+id/poll_info_thumbs_down"
+        app:layout_constraintRight_toRightOf="@+id/poll_info_thumbs_down"
+        app:layout_constraintTop_toBottomOf="@+id/poll_info_thumbs_down"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <ProgressBar
+        android:id="@+id/poll_info_progress_bar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="0dp"
+        android:layout_height="3dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:progress="50"
+        android:progressDrawable="@drawable/spinner"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/downVotes" />
+
+    <TextView
+        android:id="@+id/poll_info_undo_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:text="@string/undo"
+        app:layout_constraintEnd_toEndOf="@+id/poll_info_undo"
+        app:layout_constraintStart_toStartOf="@+id/poll_info_undo"
+        app:layout_constraintTop_toBottomOf="@+id/poll_info_undo" />
+
+
+</android.support.constraint.ConstraintLayout>
