@@ -3,14 +3,10 @@ package com.ninad.ninhydrin.poll2.main_page.PollFragment.PollInfoDialog
 import android.app.Dialog
 import android.content.Context
 import android.os.Bundle
-import android.support.animation.DynamicAnimation
-import android.support.animation.SpringAnimation
-import android.support.animation.SpringForce
 import android.support.constraint.ConstraintLayout
 import android.support.v4.content.ContextCompat
 import android.view.LayoutInflater
 import android.view.View
-import android.widget.ImageButton
 import com.ninad.ninhydrin.poll2.R
 import com.ninad.ninhydrin.poll2.main_page.Poll
 import com.ninad.ninhydrin.poll2.main_page.PollFragment.MVP
@@ -55,7 +51,7 @@ class PollInfoDialog(private val dialogContext: Context, private val poll: Poll,
         view.poll_info_undo.isEnabled = true
 
         if (!(poll.up == 0 && poll.down == 0)) {
-            view.poll_info_progress_bar.progress = poll.up as Int * 100 / (poll.up as Int + poll.down as Int)
+            view.poll_info_progress_bar.progress = poll.up as Int * 100/ (poll.up as Int + poll.down as Int)
         }
 
         if (poll.isUpVotedByUser && !poll.isDownVotedByUser) {
