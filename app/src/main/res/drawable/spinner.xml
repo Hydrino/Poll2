@@ -2,7 +2,7 @@
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android" >
 
     <item android:id="@android:id/background">
-        <color android:color="@color/colorPrimary">
+        <color android:color="@color/thumbs_down">
 
         </color>
     </item>
@@ -10,11 +10,11 @@
     <item android:id="@android:id/progress">
         <clip>
             <shape>
-                <solid android:color="@color/colorAccent" />
+                <solid android:color="@color/thumbs_up" />
             </shape>
         </clip>
 
-        <color android:color="@color/colorAccent" />
+        <color android:color="@color/thumbs_up" />
     </item>
 
 </layer-list>

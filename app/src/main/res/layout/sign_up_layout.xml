@@ -2,40 +2,53 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
     android:gravity="center"
     android:orientation="vertical"
     android:padding="16dp">
+
+    <TextView
+        android:id="@+id/sign_up_text_message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:fontFamily="sans-serif-light"
+        android:gravity="center"
+        android:text="@string/sign_up_message"
+        android:textColor="@android:color/white"
+        android:textSize="32sp" />
 
     <EditText
         android:id="@+id/sign_up_roll_no_edit_text"
         android:layout_width="match_parent"
         android:layout_height="56dp"
-        android:maxLength="9"
         android:layout_marginBottom="16dp"
-        android:inputType="number" />
+        android:hint="@string/roll_no"
+        android:inputType="number"
+        android:maxLength="9"
+        android:textColorHint="#B2EBF2" />
 
     <Spinner
         android:id="@+id/sign_up_branch_spinner"
         android:layout_width="match_parent"
         android:layout_height="56dp"
         android:layout_marginBottom="16dp"
-        android:entries="@array/branches">
+        android:entries="@array/branches" />
 
-    </Spinner>
 
     <Spinner
         android:id="@+id/sign_up_year_spinner"
         android:layout_width="match_parent"
         android:layout_height="56dp"
         android:layout_marginBottom="16dp"
-        android:entries="@array/years">
+        android:entries="@array/years" />
 
-    </Spinner>
 
     <Button
         android:id="@+id/sign_up_done_button"
         android:layout_width="match_parent"
         android:layout_height="56dp"
+        android:background="@drawable/button_background"
         android:text="@string/sign_up" />
 
 </LinearLayout>

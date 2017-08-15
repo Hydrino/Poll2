@@ -3,7 +3,7 @@
     <string name="god">GOD</string>
     <string name="is_user_signed_in">IsUserSignedIn</string>
     <string name="sign_up">Sign up</string>
-    <string name="roll_no">RollNo</string>
+    <string name="roll_no">Roll No</string>
     <string name="branch">Branch</string>
     <string name="year">Year</string>
     <string name="thumbs_down">ThumbsDown</string>
@@ -14,6 +14,10 @@
     <string name="is_my_polls">IsMyPolls</string>
     <string name="undo">Undo</string>
     <string name="delete">Delete</string>
+    <string name="sign_up_message">Register to get started!</string>
+    <string name="title">Title</string>
+    <string name="desc">Description</string>
+    <string name="new_poll">New poll</string>
     <string-array name="branches">
         <item>Cse</item>
         <item>Ece</item>

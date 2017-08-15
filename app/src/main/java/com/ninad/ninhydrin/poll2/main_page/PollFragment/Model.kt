@@ -409,7 +409,7 @@ class Model(private val modelToPresenter: MVP.ModelToPresenter) : MVP.PresenterT
         removeLogObs.subscribe({
             // log removed successfully
             // proceed to decrease vote count
-            updateVoteCount(voteListRef.push(), isUpVoted, true,RollNo)
+            updateVoteCount(voteListRef.push(), isUpVoted, true, RollNo)
         }) { error ->
             Log.w("Undo", "Error in removing log.")
             error.printStackTrace()
@@ -441,7 +441,7 @@ class Model(private val modelToPresenter: MVP.ModelToPresenter) : MVP.PresenterT
                 }
             })
 
-        }.timeout(4, TimeUnit.SECONDS)
+        }.timeout(3, TimeUnit.SECONDS)
     }
 
     //********************************************************************************************//

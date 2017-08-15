@@ -46,8 +46,12 @@ class AddNewPollActivity : AppCompatActivity(), MVP.PresenterToView {
         // call presenter on click
         val dateFormat = SimpleDateFormat("dd MMM yy", Locale.ENGLISH)
         val cal = Calendar.getInstance()
+
         new_poll_done_button.setOnClickListener {
 
+            new_poll_done_button.isEnabled = false
+            new_poll_title.isEnabled = false
+            new_poll_desc.isEnabled = false
             Log.w("POLL2_new_poll", "button clicked")
 
             // get current date
@@ -114,6 +118,9 @@ class AddNewPollActivity : AppCompatActivity(), MVP.PresenterToView {
 
     override fun showFailed(message: String) {
         Toast.makeText(applicationContext, message, Toast.LENGTH_LONG).show()
+        new_poll_done_button.isEnabled = true
+        new_poll_title.isEnabled = true
+        new_poll_desc.isEnabled = true
     }
 
     override fun onDestroy() {

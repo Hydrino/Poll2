@@ -9,6 +9,7 @@ import android.support.v7.app.ActionBarDrawerToggle
 import android.support.v7.app.AppCompatActivity
 import android.view.Gravity
 import android.view.MenuItem
+import android.view.View
 import android.widget.ArrayAdapter
 import com.ninad.ninhydrin.poll2.R
 import com.ninad.ninhydrin.poll2.main_page.PollFragment.PollFragment
@@ -62,8 +63,11 @@ class MainActivity : AppCompatActivity() {
         // set onclick listener for the FAB
         // start AddNewPollActivity
         add_new_poll_fab.setOnClickListener({
-            startActivity(Intent(this,
-                    AddNewPollActivity::class.java))
+            if (nav_drawer.isDrawerOpen(Gravity.START))
+                nav_drawer.closeDrawer(Gravity.START)
+            else
+                startActivity(Intent(this,
+                        AddNewPollActivity::class.java))
         })
 
     }
@@ -80,10 +84,17 @@ class MainActivity : AppCompatActivity() {
         // initialise the listener
         actionBarToggle = object : ActionBarDrawerToggle(this, nav_drawer,
                 R.string.open_nav, R.string.close_nav) {
+            override fun onDrawerSlide(drawerView: View?, slideOffset: Float) {
+                add_new_poll_fab.scaleX = 1 - 0.3f * slideOffset
+                add_new_poll_fab.scaleY = 1 - 0.3f * slideOffset
+                add_new_poll_fab.rotation = 135 * slideOffset
+                super.onDrawerSlide(drawerView, slideOffset)
+            }
         }
 
         // add listener to drawer layout
         nav_drawer.addDrawerListener(actionBarToggle)
+
 
         // initialise the navigation drawer list
         initNavDrawerListItems()
@@ -97,9 +108,10 @@ class MainActivity : AppCompatActivity() {
         //setting on item click listener for nav bar list items
         nav_bar_items_list.setOnItemClickListener({ _, _, pos, _ ->
 
-            // if same item is clicked , just close the drawer
+            nav_drawer.closeDrawer(Gravity.START)
+
+            // if same item is clicked , just return
             if (pos == currentPagePosition) {
-                nav_drawer.closeDrawer(Gravity.START)
                 return@setOnItemClickListener
             }
 
@@ -110,8 +122,6 @@ class MainActivity : AppCompatActivity() {
             currentPagePosition = pos
             retainFrag?.setCurrentPagePosition(pos)
 
-            // close the drawer and change action bar title
-            nav_drawer.closeDrawer(Gravity.START)
             supportActionBar?.title = navBarListItems[currentPagePosition]
 
         })

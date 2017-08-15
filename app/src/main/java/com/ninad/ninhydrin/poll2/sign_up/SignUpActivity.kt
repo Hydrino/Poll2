@@ -30,10 +30,15 @@ class SignUpActivity : AppCompatActivity(), MVP.PresenterToView {
 
         // pass the values to presenter when button clicked
         sign_up_done_button.setOnClickListener({
+            sign_up_done_button.isEnabled = false
+            sign_up_roll_no_edit_text.isEnabled = false
+            sign_up_year_spinner.isEnabled = false
+            sign_up_branch_spinner.isEnabled = false
             viewToPresenter?.ButtonClicked(sign_up_roll_no_edit_text.text.toString(),
                     sign_up_branch_spinner.selectedItem.toString(),
                     sign_up_year_spinner.selectedItem.toString())
         })
+
     }
 
     private fun initVariables() {
@@ -61,11 +66,15 @@ class SignUpActivity : AppCompatActivity(), MVP.PresenterToView {
 
     override fun showFailed(message: String) {
         Toast.makeText(applicationContext, message, Toast.LENGTH_SHORT).show()
+        sign_up_done_button.isEnabled = true
+        sign_up_roll_no_edit_text.isEnabled = true
+        sign_up_year_spinner.isEnabled = true
+        sign_up_branch_spinner.isEnabled = true
     }
 
 
     override fun showSuccess(Roll_No: String, Branch: String, Year: String) {
-        Toast.makeText(applicationContext, "Yeyy!", Toast.LENGTH_SHORT).show()
+        Toast.makeText(applicationContext, "Registered Successfully", Toast.LENGTH_SHORT).show()
 
         // store user info in God preference
         // also change sign in status

@@ -17,12 +17,17 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".sign_up.SignUpActivity" />
+        <activity
+            android:name=".sign_up.SignUpActivity"
+            android:theme="@style/SignUpTheme" />
 
         <activity android:name=".main_page.MainActivity" />
 
-        <activity android:name=".main_page.new_poll.AddNewPollActivity"
+        <activity
+            android:label="@string/new_poll"
+            android:name=".main_page.new_poll.AddNewPollActivity"
             android:parentActivityName=".main_page.MainActivity" />
+
     </application>
 
 </manifest>

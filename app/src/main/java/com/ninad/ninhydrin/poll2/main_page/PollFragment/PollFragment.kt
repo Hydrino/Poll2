@@ -3,6 +3,7 @@ package com.ninad.ninhydrin.poll2.main_page.PollFragment
 import android.app.Fragment
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
+import android.support.v7.widget.RecyclerView
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -12,6 +13,7 @@ import android.widget.Toast
 import com.ninad.ninhydrin.poll2.R
 import com.ninad.ninhydrin.poll2.main_page.Poll
 import com.ninad.ninhydrin.poll2.main_page.PollFragment.PollInfoDialog.PollInfoDialog
+import kotlinx.android.synthetic.main.main_layout.*
 import kotlinx.android.synthetic.main.polls_list_layout.*
 
 /**
@@ -92,6 +94,15 @@ class PollFragment : Fragment(), MVP.PresenterToView, PollsRecyclerAdapter.onRec
         // notify the presenter that we are ready to take in recycler view items(polls)
         Log.w("Poll2_fragTrace", "called presenter")
         viewToPresenter?.viewCreated(isMyPolls, RollNo, Branch, Year)
+
+        polls_recycler_view.addOnScrollListener(object : RecyclerView.OnScrollListener() {
+            override fun onScrolled(recyclerView: RecyclerView?, dx: Int, dy: Int) {
+                if (dy > 0)
+                    activity.add_new_poll_fab.hide()
+                else
+                    activity.add_new_poll_fab.show()
+            }
+        })
 
     }
 

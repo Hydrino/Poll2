@@ -3,10 +3,14 @@ package com.ninad.ninhydrin.poll2.main_page.PollFragment.PollInfoDialog
 import android.app.Dialog
 import android.content.Context
 import android.os.Bundle
+import android.support.animation.DynamicAnimation
+import android.support.animation.SpringAnimation
+import android.support.animation.SpringForce
 import android.support.constraint.ConstraintLayout
 import android.support.v4.content.ContextCompat
 import android.view.LayoutInflater
 import android.view.View
+import android.widget.ImageButton
 import com.ninad.ninhydrin.poll2.R
 import com.ninad.ninhydrin.poll2.main_page.Poll
 import com.ninad.ninhydrin.poll2.main_page.PollFragment.MVP
@@ -59,7 +63,7 @@ class PollInfoDialog(private val dialogContext: Context, private val poll: Poll,
             view.poll_info_thumbs_down.isEnabled = false
 
             view.poll_info_thumbs_up.setColorFilter(ContextCompat.getColor(dialogContext,
-                    R.color.colorAccent))
+                    R.color.thumbs_up))
 
             view.poll_info_thumbs_down.setColorFilter(ContextCompat.getColor(dialogContext,
                     android.R.color.darker_gray))
@@ -72,7 +76,7 @@ class PollInfoDialog(private val dialogContext: Context, private val poll: Poll,
                     android.R.color.darker_gray))
 
             view.poll_info_thumbs_down.setColorFilter(ContextCompat.getColor(dialogContext,
-                    R.color.colorPrimary))
+                    R.color.thumbs_down))
         } else {
             view.poll_info_undo.isEnabled = false
         }
@@ -84,6 +88,7 @@ class PollInfoDialog(private val dialogContext: Context, private val poll: Poll,
         }
 
         view.poll_info_thumbs_down.setOnClickListener {
+
             viewToPresenter?.downVoted(RollNo, poll.Key ?: "", poll.Year ?: "",
                     poll.Branch ?: "")
             dismiss()
@@ -95,9 +100,11 @@ class PollInfoDialog(private val dialogContext: Context, private val poll: Poll,
         }
 
         view.poll_info_undo.setOnClickListener {
+
             viewToPresenter?.undoClicked(poll.Year, poll.Branch, poll.Key, RollNo,
                     poll.isUpVotedByUser)
             dismiss()
         }
     }
+
 }
