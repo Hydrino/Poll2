@@ -1,5 +1,7 @@
 package com.ninad.ninhydrin.poll2.sign_up
 
+import android.util.Log
+
 
 class Presenter : MVP.ViewToPresenter, MVP.ModelToPresenter {
 
@@ -13,15 +15,22 @@ class Presenter : MVP.ViewToPresenter, MVP.ModelToPresenter {
 
 
     //--------------------view -> presenter----------------------------//
-    override fun ButtonClicked(Roll_No: String, Branch: String, Year: String) {
+    override fun ButtonClicked(Roll_No: String, Branch: String, Year: String, OldRoll_No: String?,
+                               OldBranch: String?, OldYear: String?) {
 
         // if roll no is not valid, show error in view
         if (Roll_No.length != 9)
             presenterToView?.showFailed("Invalid Roll No")
-        else
-        // else pass to model
-            presenterToModel?.signUpUser(Roll_No, Branch, Year)
+        // if old data and new data are same, convey to user
+        else if (Roll_No == OldRoll_No && Year == OldYear && Branch == OldBranch) {
+            Log.w("update", "same info entered again")
+            presenterToView?.showFailed("Same data entered as before.")
+        } else {
+            // else pass to model
+            Log.w("update", "sending to model")
+            presenterToModel?.signUpUser(Roll_No, Branch, Year, OldRoll_No, OldBranch, OldYear)
 
+        }
     }
 
     //--------------------model -> presenter------------------------//

@@ -18,6 +18,11 @@
     <string name="title">Title</string>
     <string name="desc">Description</string>
     <string name="new_poll">New poll</string>
+    <string name="old_branch">OldBranch</string>
+    <string name="old_year">OldYear</string>
+    <string name="old_roll_no">OldRollNo</string>
+    <string name="registering">Registering…</string>
+    <string name="update_text_message">Enter new details</string>
     <string-array name="branches">
         <item>Cse</item>
         <item>Ece</item>

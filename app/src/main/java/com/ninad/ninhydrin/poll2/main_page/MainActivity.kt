@@ -14,6 +14,7 @@ import android.widget.ArrayAdapter
 import com.ninad.ninhydrin.poll2.R
 import com.ninad.ninhydrin.poll2.main_page.PollFragment.PollFragment
 import com.ninad.ninhydrin.poll2.main_page.new_poll.AddNewPollActivity
+import com.ninad.ninhydrin.poll2.sign_up.SignUpActivity
 import kotlinx.android.synthetic.main.main_layout.*
 import kotlinx.android.synthetic.main.nav_bar_layout.*
 
@@ -108,7 +109,15 @@ class MainActivity : AppCompatActivity() {
         //setting on item click listener for nav bar list items
         nav_bar_items_list.setOnItemClickListener({ _, _, pos, _ ->
 
+            //close the drawer every time first
             nav_drawer.closeDrawer(Gravity.START)
+
+            // if update info is clicked we start a new activity and don't have to care about
+            // the small other things
+            if (pos == 2) {
+                setCurrentPageByPagePosition(2)
+                return@setOnItemClickListener
+            }
 
             // if same item is clicked , just return
             if (pos == currentPagePosition) {
@@ -190,6 +199,15 @@ class MainActivity : AppCompatActivity() {
                     fragment_Manager.beginTransaction().replace(R.id.main_container,
                             myPollsFrag, MY_POLLS_FRAG_TAG).commit()
                 }
+            }
+
+            2 -> {
+                val intent = Intent(this, SignUpActivity::class.java)
+                intent.putExtra(getString(R.string.old_roll_no), RollNo)
+                intent.putExtra(getString(R.string.old_branch), Branch)
+                intent.putExtra(getString(R.string.old_year), Year)
+
+                startActivity(intent)
             }
         }
 

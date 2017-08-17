@@ -2,12 +2,16 @@ package com.ninad.ninhydrin.poll2.sign_up
 
 class MVP {
 
+    // we reuse this activity for updating info too
+    // we pass the old info for deletion
     interface ViewToPresenter {
-        fun ButtonClicked(Roll_No: String, Branch: String, Year: String)
+        fun ButtonClicked(Roll_No: String, Branch: String, Year: String,
+                          OldRoll_No: String?, OldBranch: String?, OldYear: String?)
     }
 
     interface PresenterToModel {
-        fun signUpUser(Roll_No: String, Branch: String, Year: String)
+        fun signUpUser(Roll_No: String, Branch: String, Year: String,
+                       OldRoll_No: String?, OldBranch: String?, OldYear: String?)
         fun unSub()
     }
 

@@ -19,13 +19,14 @@
 
         <activity
             android:name=".sign_up.SignUpActivity"
+            android:parentActivityName=".main_page.MainActivity"
             android:theme="@style/SignUpTheme" />
 
         <activity android:name=".main_page.MainActivity" />
 
         <activity
-            android:label="@string/new_poll"
             android:name=".main_page.new_poll.AddNewPollActivity"
+            android:label="@string/new_poll"
             android:parentActivityName=".main_page.MainActivity" />
 
     </application>

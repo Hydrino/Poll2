@@ -5,6 +5,7 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.util.Log
 import android.widget.Toast
 import com.ninad.ninhydrin.poll2.R
 import com.ninad.ninhydrin.poll2.main_page.MainActivity
@@ -17,6 +18,12 @@ class SignUpActivity : AppCompatActivity(), MVP.PresenterToView {
     private var presenter: Presenter? = null
     private var viewToPresenter: MVP.ViewToPresenter? = null
     lateinit private var fragment_manager: FragmentManager
+
+    // all the variables containing old info(in case of updating info)
+    // we will extract these values from intent of MainActivity
+    private var OldRoll_No: String? = null
+    private var OldBranch: String? = null
+    private var OldYear: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,15 +41,30 @@ class SignUpActivity : AppCompatActivity(), MVP.PresenterToView {
             sign_up_roll_no_edit_text.isEnabled = false
             sign_up_year_spinner.isEnabled = false
             sign_up_branch_spinner.isEnabled = false
+
+            sign_up_done_button.text = getString(R.string.registering)
             viewToPresenter?.ButtonClicked(sign_up_roll_no_edit_text.text.toString(),
                     sign_up_branch_spinner.selectedItem.toString(),
-                    sign_up_year_spinner.selectedItem.toString())
+                    sign_up_year_spinner.selectedItem.toString(),
+                    OldRoll_No, OldBranch, OldYear)
+
         })
 
     }
 
     private fun initVariables() {
         fragment_manager = fragmentManager
+
+        // getting old values (in case of updating info)
+        val intent = intent
+        OldBranch = intent.getStringExtra(getString(R.string.old_branch))
+        OldYear = intent.getStringExtra(getString(R.string.old_year))
+        OldRoll_No = intent.getStringExtra(getString(R.string.old_roll_no))
+
+        if(OldBranch!=null && OldYear!=null && OldRoll_No!=null)
+            sign_up_text_message.text = getString(R.string.update_text_message)
+
+        Log.w("update", "$OldYear $OldBranch $OldRoll_No")
     }
 
 
@@ -70,6 +92,7 @@ class SignUpActivity : AppCompatActivity(), MVP.PresenterToView {
         sign_up_roll_no_edit_text.isEnabled = true
         sign_up_year_spinner.isEnabled = true
         sign_up_branch_spinner.isEnabled = true
+        sign_up_done_button.text = getString(R.string.sign_up)
     }
 
 
@@ -94,6 +117,7 @@ class SignUpActivity : AppCompatActivity(), MVP.PresenterToView {
         editor.putString(getString(R.string.year), year)
         editor.putBoolean(getString(R.string.is_user_signed_in), true)
 
+        Log.w("update", "$roll_No $branch $year put in God")
         editor.apply()
     }
 
