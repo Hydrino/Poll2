@@ -135,7 +135,7 @@ class Model(private val modelToPresenter: MVP.ModelToPresenter) : MVP.PresenterT
                 // success only if deleted successfully
                 val deleteInfoObs: Single<Unit> = getDeleteInfoObs(OldRoll_No, OldYear, OldBranch)
 
-                // subscribe to this obs
+                // subscribe to this observable
                 deleteInfoObs.observeOn(AndroidSchedulers.mainThread()).subscribe({
                     // deleting previous user info is successful
                     Log.w("update", "deleted previous user info successfully!")
