@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Poll2</string>
+    <string name="app_name">Poll</string>
     <string name="god">GOD</string>
     <string name="is_user_signed_in">IsUserSignedIn</string>
     <string name="sign_up">Sign up</string>
@@ -23,6 +23,7 @@
     <string name="old_roll_no">OldRollNo</string>
     <string name="registering">Registering…</string>
     <string name="update_text_message">Enter new details</string>
+    <string name="no_polls_message">No polls available right now.</string>
     <string-array name="branches">
         <item>Cse</item>
         <item>Ece</item>

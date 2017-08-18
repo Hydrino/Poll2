@@ -50,7 +50,6 @@ class Model(private val modelToPresenter: MVP.ModelToPresenter) : MVP.PresenterT
             else
                 modelToPresenter.signUpFailed()
         }
-
     }
 
     override fun unSub() {
@@ -64,7 +63,6 @@ class Model(private val modelToPresenter: MVP.ModelToPresenter) : MVP.PresenterT
             Log.w("POLL2_sign_up", "Disposing outer observable")
             innerDisposable?.dispose()
         }
-
     }
 
     //--------------------------------------------------------------------------------------------//

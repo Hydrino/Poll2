@@ -144,8 +144,9 @@ class PollFragment : Fragment(), MVP.PresenterToView, PollsRecyclerAdapter.onRec
     override fun showFailed(message: String) {
         // timeout exception will always occur
         // so show it only when we really couldn't fetch polls
-        if (polls?.size == 0)
+        if (polls?.size == 0) {
             Toast.makeText(activity, message, Toast.LENGTH_SHORT).show()
+        }
     }
 
     // a poll has been deleted by it's op
