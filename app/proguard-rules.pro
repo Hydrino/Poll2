@@ -22,6 +22,6 @@
 
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
-#-renamesourcefileattribute SourceFile
+#-renamesourcefileattribute SourceFile -v
 -keepattributes Signature
 -keepclassmembers class com.ninad.ninhydrin.poll2.main_page.**{*;}
